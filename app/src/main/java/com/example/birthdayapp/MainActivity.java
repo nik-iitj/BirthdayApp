@@ -25,14 +25,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name= txtInp.getEditableText().toString();
+                int unicode=0x1F989;
+                String emoji=getEmoji(unicode);
+
                 Intent intent= new Intent(v.getContext(), BirthdayGreetingActivity.class);
-                if(name.equals("Neha") || name.equals("neha"))  intent.putExtra("name","cutiee owl :)");
+                if(name.equals("Neha") || name.equals("neha"))  intent.putExtra("name","cutiee owl :)"+"\n"+emoji);
                 else intent.putExtra("name",name);
                 startActivity(intent);
 
 
             }
         });
+
+    }
+    public String getEmoji(int uni){
+        return new String (Character.toChars(uni));
 
     }
 }

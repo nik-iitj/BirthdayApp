@@ -15,9 +15,9 @@ public class BirthdayGreetingActivity extends AppCompatActivity {
 
         Bundle data= getIntent().getExtras();
         CharSequence getName=data.getCharSequence("name");
-
         txt.setText(getName);
 
 
     }
+
 }
